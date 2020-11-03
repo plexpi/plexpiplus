@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		642F63B125487A4C00D6F6CC /* FilterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F63B025487A4C00D6F6CC /* FilterViewPresenter.swift */; };
+		642F63B325487EF200D6F6CC /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F63B225487EF200D6F6CC /* FilterManager.swift */; };
+		644CEF3C2545F89400CFE9ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEF3B2545F89400CFE9ED /* AppDelegate.swift */; };
+		644CEF3E2545F89400CFE9ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEF3D2545F89400CFE9ED /* SceneDelegate.swift */; };
+		644CEF402545F89400CFE9ED /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEF3F2545F89400CFE9ED /* MainViewController.swift */; };
+		644CEF432545F89400CFE9ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 644CEF412545F89400CFE9ED /* Main.storyboard */; };
+		644CEF452545F89500CFE9ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 644CEF442545F89500CFE9ED /* Assets.xcassets */; };
+		644CEF482545F89500CFE9ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 644CEF462545F89500CFE9ED /* LaunchScreen.storyboard */; };
+		64870F6B2546B54700F0D381 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64870F6A2546B54700F0D381 /* FilterViewController.swift */; };
+		64B379702547FCAE007241C4 /* TorrentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B3796F2547FCAE007241C4 /* TorrentViewCell.swift */; };
+		64B8BE1525488D8200B3F134 /* TorrentDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B8BE1425488D8200B3F134 /* TorrentDownloader.framework */; };
+		64B8BE1625488D8200B3F134 /* TorrentDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64B8BE1425488D8200B3F134 /* TorrentDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		64DB31B42546B6C8005F32B6 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DB31B32546B6C8005F32B6 /* MainViewPresenter.swift */; };
+		64DB31B82546B7BF005F32B6 /* TorrentSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DB31B72546B7BF005F32B6 /* TorrentSearch.framework */; };
+		64DB31B92546B7BF005F32B6 /* TorrentSearch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64DB31B72546B7BF005F32B6 /* TorrentSearch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E6E6DE3A23B36BEBE06E8408 /* libPods-PIPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA6722CD3E6927715763EF2 /* libPods-PIPlus.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		64DB31BA2546B7BF005F32B6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				64B8BE1625488D8200B3F134 /* TorrentDownloader.framework in Embed Frameworks */,
+				64DB31B92546B7BF005F32B6 /* TorrentSearch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		642F63B025487A4C00D6F6CC /* FilterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewPresenter.swift; sourceTree = "<group>"; };
+		642F63B225487EF200D6F6CC /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
+		644CEF382545F89400CFE9ED /* PIPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PIPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		644CEF3B2545F89400CFE9ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		644CEF3D2545F89400CFE9ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		644CEF3F2545F89400CFE9ED /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		644CEF422545F89400CFE9ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		644CEF442545F89500CFE9ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		644CEF472545F89500CFE9ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		644CEF492545F89500CFE9ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64870F6A2546B54700F0D381 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		64B3796F2547FCAE007241C4 /* TorrentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentViewCell.swift; sourceTree = "<group>"; };
+		64B8BE1425488D8200B3F134 /* TorrentDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TorrentDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64DB31B32546B6C8005F32B6 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
+		64DB31B72546B7BF005F32B6 /* TorrentSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TorrentSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7236D7A6578885841310A3E0 /* Pods-PIPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PIPlus.debug.xcconfig"; path = "Target Support Files/Pods-PIPlus/Pods-PIPlus.debug.xcconfig"; sourceTree = "<group>"; };
+		7BA6722CD3E6927715763EF2 /* libPods-PIPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PIPlus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9A778681EB5F673FF02C1CC /* Pods-PIPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PIPlus.release.xcconfig"; path = "Target Support Files/Pods-PIPlus/Pods-PIPlus.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		644CEF352545F89400CFE9ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64DB31B82546B7BF005F32B6 /* TorrentSearch.framework in Frameworks */,
+				E6E6DE3A23B36BEBE06E8408 /* libPods-PIPlus.a in Frameworks */,
+				64B8BE1525488D8200B3F134 /* TorrentDownloader.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15CEA8C65695501251428AD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7236D7A6578885841310A3E0 /* Pods-PIPlus.debug.xcconfig */,
+				E9A778681EB5F673FF02C1CC /* Pods-PIPlus.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		644CEF2F2545F89400CFE9ED = {
+			isa = PBXGroup;
+			children = (
+				644CEF3A2545F89400CFE9ED /* PIPlus */,
+				644CEF392545F89400CFE9ED /* Products */,
+				64DB31B62546B7BF005F32B6 /* Frameworks */,
+				15CEA8C65695501251428AD1 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		644CEF392545F89400CFE9ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				644CEF382545F89400CFE9ED /* PIPlus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		644CEF3A2545F89400CFE9ED /* PIPlus */ = {
+			isa = PBXGroup;
+			children = (
+				64870F6E2546B61A00F0D381 /* Main */,
+				64870F692546B53200F0D381 /* Filter */,
+				644CEF3B2545F89400CFE9ED /* AppDelegate.swift */,
+				644CEF3D2545F89400CFE9ED /* SceneDelegate.swift */,
+				644CEF412545F89400CFE9ED /* Main.storyboard */,
+				644CEF442545F89500CFE9ED /* Assets.xcassets */,
+				644CEF462545F89500CFE9ED /* LaunchScreen.storyboard */,
+				644CEF492545F89500CFE9ED /* Info.plist */,
+			);
+			path = PIPlus;
+			sourceTree = "<group>";
+		};
+		64870F692546B53200F0D381 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				64870F6A2546B54700F0D381 /* FilterViewController.swift */,
+				642F63B025487A4C00D6F6CC /* FilterViewPresenter.swift */,
+				642F63B225487EF200D6F6CC /* FilterManager.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		64870F6E2546B61A00F0D381 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				644CEF3F2545F89400CFE9ED /* MainViewController.swift */,
+				64DB31B32546B6C8005F32B6 /* MainViewPresenter.swift */,
+				64B3796F2547FCAE007241C4 /* TorrentViewCell.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		64DB31B62546B7BF005F32B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64B8BE1425488D8200B3F134 /* TorrentDownloader.framework */,
+				64DB31B72546B7BF005F32B6 /* TorrentSearch.framework */,
+				7BA6722CD3E6927715763EF2 /* libPods-PIPlus.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		644CEF372545F89400CFE9ED /* PIPlus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 644CEF4C2545F89500CFE9ED /* Build configuration list for PBXNativeTarget "PIPlus" */;
+			buildPhases = (
+				442D3AD4D89F788A3C96CC1C /* [CP] Check Pods Manifest.lock */,
+				644CEF342545F89400CFE9ED /* Sources */,
+				644CEF352545F89400CFE9ED /* Frameworks */,
+				644CEF362545F89400CFE9ED /* Resources */,
+				64DB31BA2546B7BF005F32B6 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PIPlus;
+			productName = PIPlus;
+			productReference = 644CEF382545F89400CFE9ED /* PIPlus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		644CEF302545F89400CFE9ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					644CEF372545F89400CFE9ED = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 644CEF332545F89400CFE9ED /* Build configuration list for PBXProject "PIPlus" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 644CEF2F2545F89400CFE9ED;
+			productRefGroup = 644CEF392545F89400CFE9ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				644CEF372545F89400CFE9ED /* PIPlus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		644CEF362545F89400CFE9ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				644CEF482545F89500CFE9ED /* LaunchScreen.storyboard in Resources */,
+				644CEF452545F89500CFE9ED /* Assets.xcassets in Resources */,
+				644CEF432545F89400CFE9ED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		442D3AD4D89F788A3C96CC1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PIPlus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		644CEF342545F89400CFE9ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				644CEF402545F89400CFE9ED /* MainViewController.swift in Sources */,
+				644CEF3C2545F89400CFE9ED /* AppDelegate.swift in Sources */,
+				642F63B125487A4C00D6F6CC /* FilterViewPresenter.swift in Sources */,
+				64DB31B42546B6C8005F32B6 /* MainViewPresenter.swift in Sources */,
+				64B379702547FCAE007241C4 /* TorrentViewCell.swift in Sources */,
+				64870F6B2546B54700F0D381 /* FilterViewController.swift in Sources */,
+				644CEF3E2545F89400CFE9ED /* SceneDelegate.swift in Sources */,
+				642F63B325487EF200D6F6CC /* FilterManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		644CEF412545F89400CFE9ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				644CEF422545F89400CFE9ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		644CEF462545F89500CFE9ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				644CEF472545F89500CFE9ED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		644CEF4A2545F89500CFE9ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		644CEF4B2545F89500CFE9ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		644CEF4D2545F89500CFE9ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7236D7A6578885841310A3E0 /* Pods-PIPlus.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H54PS5XC56;
+				INFOPLIST_FILE = PIPlus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adborbas.PIPlus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		644CEF4E2545F89500CFE9ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9A778681EB5F673FF02C1CC /* Pods-PIPlus.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H54PS5XC56;
+				INFOPLIST_FILE = PIPlus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.adborbas.PIPlus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		644CEF332545F89400CFE9ED /* Build configuration list for PBXProject "PIPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				644CEF4A2545F89500CFE9ED /* Debug */,
+				644CEF4B2545F89500CFE9ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		644CEF4C2545F89500CFE9ED /* Build configuration list for PBXNativeTarget "PIPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				644CEF4D2545F89500CFE9ED /* Debug */,
+				644CEF4E2545F89500CFE9ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 644CEF302545F89400CFE9ED /* Project object */;
+}
