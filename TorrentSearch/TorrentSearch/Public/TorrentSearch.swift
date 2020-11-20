@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol TorrentSearch {
+public protocol TorrentSearcher {
     func series(_ params: TorrentSearchParams, _ completionHandler: @escaping (Result<[Torrent], Error>) -> ())
     func movies(_ params: TorrentSearchParams, _ completionHandler: @escaping (Result<[Torrent], Error>) -> ())
 }

@@ -23,10 +23,10 @@ public protocol TorrentDownloader {
 }
 
 public class PITorrentDownloader: TorrentDownloader {
-    private let baseURL = URL(string: "http://raspberrypi.local:10000")!
+    private let baseURL: URL
     
-    public init() {
-        
+    public init(baseURL: URL) {
+        self.baseURL = baseURL
     }
     
     public func downloadTorrent(params: DownloadTorrentParams, _ completionHandler: @escaping (Result<String, Error>) -> ()) {
