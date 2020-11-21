@@ -95,15 +95,6 @@ class MainViewController: UIViewController, MainView {
     func render(_ state: MainViewState) {
         self.state = state
     }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        switch segue.destination {
-//        case let filterVC as FilterViewController:
-//            filterVC.delegate = self
-//        default:
-//            return
-//        }
-//    }
     
     private func setupView() {
         let subViews = [searchStackView, collectionView, activityIndicator, errorLabel]
@@ -221,7 +212,7 @@ class MainViewController: UIViewController, MainView {
     }
 
     @objc func showFilter(sender: AnyObject){
-        let filterViewController = TestViewController()
+        let filterViewController = FilterViewController()
         let navigationController = UINavigationController()
         navigationController.viewControllers = [filterViewController]
 
@@ -249,7 +240,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TorrentViewCell", for: indexPath) as! TorrentViewCell
         let torrent = torrents[indexPath.row]
-//        cell.width = collectionView.contentSize.width
         cell.render(torrent)
         return cell
     }

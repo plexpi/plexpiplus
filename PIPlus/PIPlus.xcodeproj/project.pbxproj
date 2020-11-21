@@ -15,7 +15,6 @@
 		642528292562F2DD00BA0926 /* FilterCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642528282562F2DD00BA0926 /* FilterCategoryView.swift */; };
 		642F63B125487A4C00D6F6CC /* FilterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F63B025487A4C00D6F6CC /* FilterViewPresenter.swift */; };
 		642F63B325487EF200D6F6CC /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F63B225487EF200D6F6CC /* FilterManager.swift */; };
-		643320D1256306CB00BDDC10 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643320D0256306CB00BDDC10 /* TestViewController.swift */; };
 		644269242563A6A6008B905E /* FilterStateVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644269232563A6A6008B905E /* FilterStateVIew.swift */; };
 		644CEF3C2545F89400CFE9ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEF3B2545F89400CFE9ED /* AppDelegate.swift */; };
 		644CEF3E2545F89400CFE9ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEF3D2545F89400CFE9ED /* SceneDelegate.swift */; };
@@ -57,7 +56,6 @@
 		642528282562F2DD00BA0926 /* FilterCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCategoryView.swift; sourceTree = "<group>"; };
 		642F63B025487A4C00D6F6CC /* FilterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewPresenter.swift; sourceTree = "<group>"; };
 		642F63B225487EF200D6F6CC /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
-		643320D0256306CB00BDDC10 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		644269232563A6A6008B905E /* FilterStateVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStateVIew.swift; sourceTree = "<group>"; };
 		644CEF382545F89400CFE9ED /* PIPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PIPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		644CEF3B2545F89400CFE9ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 				64870F6A2546B54700F0D381 /* FilterViewController.swift */,
 				642F63B025487A4C00D6F6CC /* FilterViewPresenter.swift */,
 				6423AC8B255286E800FE0365 /* FilterViewState.swift */,
-				643320D0256306CB00BDDC10 /* TestViewController.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -304,7 +301,6 @@
 				64B379702547FCAE007241C4 /* TorrentViewCell.swift in Sources */,
 				6423AC93255289FB00FE0365 /* MainViewState.swift in Sources */,
 				64870F6B2546B54700F0D381 /* FilterViewController.swift in Sources */,
-				643320D1256306CB00BDDC10 /* TestViewController.swift in Sources */,
 				644CEF3E2545F89400CFE9ED /* SceneDelegate.swift in Sources */,
 				6423AC862552851700FE0365 /* MainModule.swift in Sources */,
 				642F63B325487EF200D6F6CC /* FilterManager.swift in Sources */,

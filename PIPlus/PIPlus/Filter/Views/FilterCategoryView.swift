@@ -6,14 +6,30 @@ enum FilterCategoryItem: Equatable {
     case image(UIImage)
 }
 
+protocol FilterCategoryViewDelegate: class {
+    func valueChanged(filterCategoryView: FilterCategoryView)
+}
+
 class FilterCategoryView: UIView {
     // MARK: - Properties
+    weak var delegate: FilterCategoryViewDelegate?
+    
     var title: String? {
         get {
             return label.text
         }
         set {
             label.text = newValue
+        }
+    }
+    
+    var selectedIndex: Int? {
+        get {
+            return segment.selectedSegmentIndex
+        }
+        set {
+            guard let index = newValue else { return }
+            segment.selectedSegmentIndex = index
         }
     }
     
@@ -48,6 +64,8 @@ class FilterCategoryView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        
+        segment.addTarget(self, action: #selector(self.valueChanged(_:)), for:.valueChanged)
     }
     
     required init?(coder: NSCoder) {
@@ -55,6 +73,11 @@ class FilterCategoryView: UIView {
     }
     
     // MARK: - Functions
+    
+    @objc func valueChanged(_ sender: Any) {
+        delegate?.valueChanged(filterCategoryView: self)
+    }
+    
     func appendItem(_ item: FilterCategoryItem) {
         switch item {
         case .image(let image):
