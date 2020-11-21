@@ -1,5 +1,5 @@
 //
-//  CustomTorrentSearch.swift
+//  PITorrentSearcher.swift
 //  TorrentSearch
 //
 //  Created by Adam Borbas on 2020. 10. 25..
@@ -8,11 +8,11 @@
 import Foundation
 import Alamofire
 
-public class CustomTorrentSearch: TorrentSearch {
-    private let baseURL = URL(string: "http://raspberrypi.local:5000")!
+public class PITorrentSearcher: TorrentSearcher {
+    private let baseURL: URL
     
-    public init() {
-        
+    public init(baseURL: URL) {
+        self.baseURL = baseURL
     }
     
     public func series(_ params: TorrentSearchParams, _ completionHandler: @escaping (Result<[Torrent], Error>) -> ()) {

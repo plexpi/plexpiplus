@@ -18,63 +18,114 @@ class FilterViewController: UIViewController, FilterView {
         0: .series,
         1: .movies,
     ]
-    
+
     private let languageIndexMap: [Int: FilterViewState.Language] = [
         0: .en,
         1: .hu,
     ]
-    
+
+    private let resolver: MainModule = MainModuleResolver.shared
+
+    private lazy var presenter: FilterViewPresenter = {
+        return resolver.resolveFilterViewPresenter(view: self)
+    }()
+//
     var delegate: FilterViewControllerDelegate?
     
-    @IBAction func stopBarButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+    private lazy var stackview: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        
+        stackView.addArrangedSubview(typeFilter)
+        stackView.addArrangedSubview(languageFilter)
+        return stackView
+    }()
     
-    @IBAction func doneBarButtonTapped(_ sender: Any) {
-        presenter.persistState()
-        delegate?.searchParametersChanged()
-        dismiss(animated: true, completion: nil)
-    }
+    private lazy var typeFilter: FilterCategoryView = {
+        let typeFilter = FilterCategoryView()
+        typeFilter.translatesAutoresizingMaskIntoConstraints = false
+        typeFilter.delegate = self
+        typeFilter.title = "Type"
+        typeFilter.appendItem(.image(UIImage(systemName: "tv")!))
+        typeFilter.appendItem(.image(UIImage(systemName: "film")!))
+        return typeFilter
+    }()
     
-    @IBOutlet weak var typeSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var languageSegmentedControl: UISegmentedControl!
+    private lazy var languageFilter: FilterCategoryView = {
+        let languageFilter = FilterCategoryView()
+        languageFilter.translatesAutoresizingMaskIntoConstraints = false
+        languageFilter.delegate = self
+        languageFilter.title = "Language"
+        languageFilter.appendItem(.text("en"))
+        languageFilter.appendItem(.text("hu"))
+        return languageFilter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        typeSegmentedControl.addTarget(self, action: #selector(self.typeChanged(_:)), for:.valueChanged)
-        languageSegmentedControl.addTarget(self, action: #selector(self.languageChanged(_:)), for:.valueChanged)
+        view.backgroundColor = .systemBackground
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(stopBarButtonTapped(_:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBarButtonTapped(_:)))
+        setupViews()
         presenter.loadState()
     }
     
-    private lazy var presenter: FilterViewPresenter = {
-        return FilterViewPresenter(view: self, filterManager: UserDefaultsFilterManager())
-    }()
-    
-    @objc func typeChanged(_ sender: Any) {
-        presenter.setCategory(typeIndexMap[typeSegmentedControl.selectedSegmentIndex]!)
+    private func setupViews() {
+        view.addSubview(stackview)
+        NSLayoutConstraint.activate([
+            stackview.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            stackview.topAnchor.constraint(equalTo: view.topAnchor, constant: 55),
+            stackview.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            stackview.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor)
+        ])
     }
     
-    @objc func languageChanged(_ sender: Any) {
-        presenter.setLanguage(languageIndexMap[languageSegmentedControl.selectedSegmentIndex]!)
-    }
     
+    
+    @objc func stopBarButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+
+    @objc func doneBarButtonTapped(_ sender: Any) {
+        presenter.persistState()
+        delegate?.searchParametersChanged()
+        dismiss(animated: true, completion: nil)
+    }
+
     func render(_ state: FilterViewState) {
         DispatchQueue.main.async {
             self.setCategory(state.category)
             self.setLanguage(state.language)
         }
     }
-    
+
     func setCategory(_ category: FilterViewState.Category) {
         guard let type = (typeIndexMap.first { $0.value == category }) else { return }
-    
-        typeSegmentedControl.selectedSegmentIndex = type.key
+
+        typeFilter.selectedIndex = type.key
     }
-    
+
     func setLanguage(_ language: FilterViewState.Language) {
         guard let language = (languageIndexMap.first { $0.value == language }) else { return }
-    
-        languageSegmentedControl.selectedSegmentIndex = language.key
+
+        languageFilter.selectedIndex = language.key
+    }
+}
+
+extension FilterViewController: FilterCategoryViewDelegate {
+    func valueChanged(filterCategoryView: FilterCategoryView) {
+        switch filterCategoryView {
+        case typeFilter:
+            presenter.setCategory(typeIndexMap[typeFilter.selectedIndex!]!)
+        case languageFilter:
+            presenter.setLanguage(languageIndexMap[languageFilter.selectedIndex!]!)
+        default:
+            break
+        }
     }
 }

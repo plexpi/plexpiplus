@@ -9,17 +9,6 @@ import Foundation
 import TorrentSearch
 import TorrentDownloader
 
-enum MainViewState {
-    case loading
-    case error(message: String)
-    case success(MainViewSuccessState)
-    case downloading(name: String)
-}
-
-struct MainViewSuccessState {
-    let torrents: [Torrent]
-}
-
 enum TorrentType {
     case series
     case movie
@@ -42,7 +31,7 @@ protocol MainView: class {
 
 class MainViewPresenter {
     private unowned let view: MainView
-    private let torrentSearch: TorrentSearch
+    private let torrentSearcher: TorrentSearcher
     private let torrentDownloader: TorrentDownloader
     private let filterManager: FilterManager
     
@@ -51,11 +40,11 @@ class MainViewPresenter {
     }
     
     init(view: MainView,
-         torrentSearch: TorrentSearch,
+         torrentSearcher: TorrentSearcher,
          torrentDownloader: TorrentDownloader,
          filterManager: FilterManager) {
         self.view = view
-        self.torrentSearch = torrentSearch
+        self.torrentSearcher = torrentSearcher
         self.torrentDownloader = torrentDownloader
         self.filterManager = filterManager
     }
@@ -65,9 +54,9 @@ class MainViewPresenter {
         loadTorrents(query)
     }
     
-    func download(_ torrent: Torrent) {
+    func download(_ torrent: TorrentViewCellState) {
         view.render(.loading)
-        let params = DownloadTorrentParams(category: filters.category.rawValue, url: torrent.download)
+        let params = DownloadTorrentParams(category: filters.category.rawValue, url: torrent.downloadURL)
         torrentDownloader.downloadTorrent(params: params) { (result) in
             switch result {
             case .failure(let error):
@@ -81,9 +70,9 @@ class MainViewPresenter {
     private func loadTorrents(_ query: String) {
         switch filters.category {
         case .series:
-            torrentSearch.series(self.torrentSearchParams(query: query, language: filters.language), torrentSearchResultHandler)
+            torrentSearcher.series(self.torrentSearchParams(query: query, language: filters.language), torrentSearchResultHandler)
         case .movies:
-            torrentSearch.movies(self.torrentSearchParams(query: query, language: filters.language), torrentSearchResultHandler)
+            torrentSearcher.movies(self.torrentSearchParams(query: query, language: filters.language), torrentSearchResultHandler)
         }
     }
     
@@ -95,7 +84,7 @@ class MainViewPresenter {
             }
         case .success(let torrents):
             DispatchQueue.main.async {
-                let state = MainViewSuccessState(torrents: torrents)
+                let state = MainViewSuccessState(torrents: torrents.map({ TorrentViewCellState($0) }))
                 self.view.render(.success(state))
             }
         }
@@ -112,5 +101,14 @@ class MainViewPresenter {
         
         return TorrentSearchParams(category: category,
                                    query: query)
+    }
+}
+
+extension TorrentViewCellState {
+    init(_ torrent: Torrent){
+        self.date = torrent.date
+        self.size = torrent.size
+        self.title = torrent.title
+        self.downloadURL = torrent.download
     }
 }

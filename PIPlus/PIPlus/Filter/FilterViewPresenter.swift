@@ -7,24 +7,6 @@
 
 import Foundation
 
-
-struct FilterViewState {
-    enum Category: String {
-        case series = "series"
-        case movies = "movies"
-    }
-
-    enum Language: String {
-        case en = "en"
-        case hu = "hu"
-    }
-    
-    static let `default` = FilterViewState(category: .series, language: .en)
-    
-    var category: Category
-    var language: Language
-}
-
 protocol FilterView: class {
     func render(_ state: FilterViewState)
 }
