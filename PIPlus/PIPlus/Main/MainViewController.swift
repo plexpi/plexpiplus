@@ -32,8 +32,8 @@ class MainViewController: UIViewController, MainView {
         return textField
     }()
     
-    private lazy var filterStateView: FilterStateView = {
-        let state = FilterStateView()
+    private lazy var filterStateView: OFilterStateView = {
+        let state = OFilterStateView()
         state.translatesAutoresizingMaskIntoConstraints = false
         let fGuesture = UITapGestureRecognizer(target: self, action: #selector(self.showFilter(sender:)))
         state.addGestureRecognizer(fGuesture)

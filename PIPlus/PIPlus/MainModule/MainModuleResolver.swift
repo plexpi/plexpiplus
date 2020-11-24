@@ -10,7 +10,7 @@ import TorrentSearch
 import TorrentDownloader
 
 class MainModuleResolver: MainModule {
-    func resolveFilterViewPresenter(view: FilterView) -> FilterViewPresenter {
+    func resolveFilterViewPresenter(view: OFilterView) -> FilterViewPresenter {
         return FilterViewPresenter(view: view, filterManager: resolveFilterManager())
     }
     

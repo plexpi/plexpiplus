@@ -7,10 +7,10 @@ enum FilterCategoryItem: Equatable {
 }
 
 protocol FilterCategoryViewDelegate: class {
-    func valueChanged(filterCategoryView: FilterCategoryView)
+    func valueChanged(filterCategoryView: OFilterCategoryView)
 }
 
-class FilterCategoryView: UIView {
+class OFilterCategoryView: UIView {
     // MARK: - Properties
     weak var delegate: FilterCategoryViewDelegate?
     
@@ -75,7 +75,7 @@ class FilterCategoryView: UIView {
     // MARK: - Functions
     
     @objc func valueChanged(_ sender: Any) {
-        delegate?.valueChanged(filterCategoryView: self)
+//        delegate?.valueChanged(filterCategoryView: self)
     }
     
     func appendItem(_ item: FilterCategoryItem) {

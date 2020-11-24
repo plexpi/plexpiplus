@@ -12,7 +12,7 @@ protocol FilterViewControllerDelegate {
     func searchParametersChanged()
 }
 
-class FilterViewController: UIViewController, FilterView {
+class FilterViewController: UIViewController, OFilterView {
     
     private let typeIndexMap: [Int: FilterViewState.Category] = [
         0: .series,
@@ -45,20 +45,20 @@ class FilterViewController: UIViewController, FilterView {
         return stackView
     }()
     
-    private lazy var typeFilter: FilterCategoryView = {
-        let typeFilter = FilterCategoryView()
+    private lazy var typeFilter: OFilterCategoryView = {
+        let typeFilter = OFilterCategoryView()
         typeFilter.translatesAutoresizingMaskIntoConstraints = false
-        typeFilter.delegate = self
+//        typeFilter.delegate = self
         typeFilter.title = "Type"
         typeFilter.appendItem(.image(UIImage(systemName: "tv")!))
         typeFilter.appendItem(.image(UIImage(systemName: "film")!))
         return typeFilter
     }()
     
-    private lazy var languageFilter: FilterCategoryView = {
-        let languageFilter = FilterCategoryView()
+    private lazy var languageFilter: OFilterCategoryView = {
+        let languageFilter = OFilterCategoryView()
         languageFilter.translatesAutoresizingMaskIntoConstraints = false
-        languageFilter.delegate = self
+//        languageFilter.delegate = self
         languageFilter.title = "Language"
         languageFilter.appendItem(.text("en"))
         languageFilter.appendItem(.text("hu"))
@@ -117,15 +117,15 @@ class FilterViewController: UIViewController, FilterView {
     }
 }
 
-extension FilterViewController: FilterCategoryViewDelegate {
-    func valueChanged(filterCategoryView: FilterCategoryView) {
-        switch filterCategoryView {
-        case typeFilter:
-            presenter.setCategory(typeIndexMap[typeFilter.selectedIndex!]!)
-        case languageFilter:
-            presenter.setLanguage(languageIndexMap[languageFilter.selectedIndex!]!)
-        default:
-            break
-        }
-    }
-}
+//extension FilterViewController: OFilterCategoryViewDelegate {
+//    func valueChanged(filterCategoryView: OFilterCategoryView) {
+//        switch filterCategoryView {
+//        case typeFilter:
+//            presenter.setCategory(typeIndexMap[typeFilter.selectedIndex!]!)
+//        case languageFilter:
+//            presenter.setLanguage(languageIndexMap[languageFilter.selectedIndex!]!)
+//        default:
+//            break
+//        }
+//    }
+//}

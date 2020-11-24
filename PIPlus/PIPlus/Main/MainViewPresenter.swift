@@ -9,12 +9,12 @@ import Foundation
 import TorrentSearch
 import TorrentDownloader
 
-enum TorrentType {
+enum OTorrentType {
     case series
     case movie
 }
 
-enum TorrentLanguage {
+enum OTorrentLanguage {
     case en
     case hu
 }
@@ -35,9 +35,9 @@ class MainViewPresenter {
     private let torrentDownloader: TorrentDownloader
     private let filterManager: FilterManager
     
-    private var filters: FilterViewState {
-        return filterManager.loadLastFilter()
-    }
+//    private var filters: FilterViewState {
+//        return filterManager.de
+//    }
     
     init(view: MainView,
          torrentSearcher: TorrentSearcher,
@@ -56,24 +56,24 @@ class MainViewPresenter {
     
     func download(_ torrent: TorrentViewCellState) {
         view.render(.loading)
-        let params = DownloadTorrentParams(category: filters.category.rawValue, url: torrent.downloadURL)
-        torrentDownloader.downloadTorrent(params: params) { (result) in
-            switch result {
-            case .failure(let error):
-                self.view.render(.error(message: error.localizedDescription))
-            case .success(_):
-                self.view.render(.downloading(name: torrent.title))
-            }
-        }
+//        let params = DownloadTorrentParams(category: filters.category.rawValue, url: torrent.downloadURL)
+//        torrentDownloader.downloadTorrent(params: params) { (result) in
+//            switch result {
+//            case .failure(let error):
+//                self.view.render(.error(message: error.localizedDescription))
+//            case .success(_):
+//                self.view.render(.downloading(name: torrent.title))
+//            }
+//        }
     }
     
     private func loadTorrents(_ query: String) {
-        switch filters.category {
-        case .series:
-            torrentSearcher.series(self.torrentSearchParams(query: query, language: filters.language), torrentSearchResultHandler)
-        case .movies:
-            torrentSearcher.movies(self.torrentSearchParams(query: query, language: filters.language), torrentSearchResultHandler)
-        }
+//        switch filters.category {
+//        case .series:
+//            torrentSearcher.series(self.torrentSearchParams(query: query, language: filters.language), torrentSearchResultHandler)
+//        case .movies:
+//            torrentSearcher.movies(self.torrentSearchParams(query: query, language: filters.language), torrentSearchResultHandler)
+//        }
     }
     
     private func torrentSearchResultHandler(_ result: Result<[Torrent], Error>) {

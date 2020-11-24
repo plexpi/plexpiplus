@@ -30,18 +30,22 @@ public class PITorrentDownloader: TorrentDownloader {
     }
     
     public func downloadTorrent(params: DownloadTorrentParams, _ completionHandler: @escaping (Result<String, Error>) -> ()) {
-        AF.request(baseURL.appendingPathComponent("download"),
-                   method: .post,
-                   parameters: params,
-                   encoder: JSONParameterEncoder.default)
-            .validate()
-            .responseString { response in
-                switch response.result {
-                case .success(let result):
-                    completionHandler(.success(result))
-                case .failure(let error):
-                    completionHandler(.failure(error))
-                }
-            }
+        DispatchQueue.global().async {
+            sleep(1)
+            completionHandler(.success(""))
+        }
+//        AF.request(baseURL.appendingPathComponent("download"),
+//                   method: .post,
+//                   parameters: params,
+//                   encoder: JSONParameterEncoder.default)
+//            .validate()
+//            .responseString { response in
+//                switch response.result {
+//                case .success(let result):
+//                    completionHandler(.success(result))
+//                case .failure(let error):
+//                    completionHandler(.failure(error))
+//                }
+//            }
     }
 }

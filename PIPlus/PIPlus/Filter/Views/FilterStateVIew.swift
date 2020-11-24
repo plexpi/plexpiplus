@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class FilterStateView: UIView {
+class OFilterStateView: UIView {
     
     var typeImage: UIImage? {
         get {

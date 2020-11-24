@@ -9,5 +9,5 @@ import Foundation
 
 protocol MainModule {
     func resolveMainViewPresenter(view: MainView) -> MainViewPresenter
-    func resolveFilterViewPresenter(view: FilterView) -> FilterViewPresenter
+    func resolveFilterViewPresenter(view: OFilterView) -> FilterViewPresenter
 }

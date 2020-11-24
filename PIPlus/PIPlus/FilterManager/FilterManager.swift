@@ -8,6 +8,6 @@
 import Foundation
 
 protocol FilterManager {
-    func saveFilter(_ filter: FilterViewState)
-    func loadLastFilter() -> FilterViewState
+    func saveFilter(_ filter: FilterStateViewState)
+    func loadLastFilter() -> FilterStateViewState
 }
