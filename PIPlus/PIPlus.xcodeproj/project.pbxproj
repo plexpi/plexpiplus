@@ -9,32 +9,22 @@
 /* Begin PBXBuildFile section */
 		6423AC862552851700FE0365 /* MainModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6423AC852552851700FE0365 /* MainModule.swift */; };
 		6423AC882552857700FE0365 /* MainModuleResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6423AC872552857700FE0365 /* MainModuleResolver.swift */; };
-		6423AC8C255286E800FE0365 /* FilterViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6423AC8B255286E800FE0365 /* FilterViewState.swift */; };
 		6423AC8F2552872700FE0365 /* UserDefaultsFilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6423AC8E2552872700FE0365 /* UserDefaultsFilterManager.swift */; };
-		6423AC93255289FB00FE0365 /* MainViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6423AC92255289FB00FE0365 /* MainViewState.swift */; };
-		642528292562F2DD00BA0926 /* OFilterCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642528282562F2DD00BA0926 /* OFilterCategoryView.swift */; };
-		642F63B125487A4C00D6F6CC /* FilterViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F63B025487A4C00D6F6CC /* FilterViewPresenter.swift */; };
 		642F63B325487EF200D6F6CC /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642F63B225487EF200D6F6CC /* FilterManager.swift */; };
-		644269242563A6A6008B905E /* FilterStateVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644269232563A6A6008B905E /* FilterStateVIew.swift */; };
 		644CEF3C2545F89400CFE9ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEF3B2545F89400CFE9ED /* AppDelegate.swift */; };
 		644CEF3E2545F89400CFE9ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEF3D2545F89400CFE9ED /* SceneDelegate.swift */; };
-		644CEF402545F89400CFE9ED /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644CEF3F2545F89400CFE9ED /* MainViewController.swift */; };
 		644CEF452545F89500CFE9ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 644CEF442545F89500CFE9ED /* Assets.xcassets */; };
 		644CEF482545F89500CFE9ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 644CEF462545F89500CFE9ED /* LaunchScreen.storyboard */; };
 		64573972256B99A500C6CDAD /* TorrentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64573971256B99A500C6CDAD /* TorrentListViewModel.swift */; };
-		64870F6B2546B54700F0D381 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64870F6A2546B54700F0D381 /* FilterViewController.swift */; };
 		648E016C256C3A7B00BB85B4 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648E016B256C3A7B00BB85B4 /* FilterView.swift */; };
-		64B379702547FCAE007241C4 /* TorrentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B3796F2547FCAE007241C4 /* TorrentViewCell.swift */; };
 		64B69662256916AD0001159E /* FilterStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B69661256916AD0001159E /* FilterStateView.swift */; };
 		64B69664256917240001159E /* TorrentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B69663256917240001159E /* TorrentsList.swift */; };
 		64B6966625691A3A0001159E /* TorrentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B6966525691A3A0001159E /* TorrentRow.swift */; };
 		64B69668256920760001159E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B69667256920760001159E /* SearchBar.swift */; };
 		64B8BE1525488D8200B3F134 /* TorrentDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B8BE1425488D8200B3F134 /* TorrentDownloader.framework */; };
 		64B8BE1625488D8200B3F134 /* TorrentDownloader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64B8BE1425488D8200B3F134 /* TorrentDownloader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		64DB31B42546B6C8005F32B6 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DB31B32546B6C8005F32B6 /* MainViewPresenter.swift */; };
 		64DB31B82546B7BF005F32B6 /* TorrentSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DB31B72546B7BF005F32B6 /* TorrentSearch.framework */; };
 		64DB31B92546B7BF005F32B6 /* TorrentSearch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64DB31B72546B7BF005F32B6 /* TorrentSearch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		64DF3AE52567A369007B05E0 /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DF3AE42567A369007B05E0 /* ColumnFlowLayout.swift */; };
 		E6E6DE3A23B36BEBE06E8408 /* libPods-PIPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA6722CD3E6927715763EF2 /* libPods-PIPlus.a */; };
 /* End PBXBuildFile section */
 
@@ -56,32 +46,22 @@
 /* Begin PBXFileReference section */
 		6423AC852552851700FE0365 /* MainModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModule.swift; sourceTree = "<group>"; };
 		6423AC872552857700FE0365 /* MainModuleResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleResolver.swift; sourceTree = "<group>"; };
-		6423AC8B255286E800FE0365 /* FilterViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewState.swift; sourceTree = "<group>"; };
 		6423AC8E2552872700FE0365 /* UserDefaultsFilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsFilterManager.swift; sourceTree = "<group>"; };
-		6423AC92255289FB00FE0365 /* MainViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewState.swift; sourceTree = "<group>"; };
-		642528282562F2DD00BA0926 /* OFilterCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFilterCategoryView.swift; sourceTree = "<group>"; };
-		642F63B025487A4C00D6F6CC /* FilterViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewPresenter.swift; sourceTree = "<group>"; };
 		642F63B225487EF200D6F6CC /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
-		644269232563A6A6008B905E /* FilterStateVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStateVIew.swift; sourceTree = "<group>"; };
 		644CEF382545F89400CFE9ED /* PIPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PIPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		644CEF3B2545F89400CFE9ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		644CEF3D2545F89400CFE9ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		644CEF3F2545F89400CFE9ED /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		644CEF442545F89500CFE9ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		644CEF472545F89500CFE9ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		644CEF492545F89500CFE9ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64573971256B99A500C6CDAD /* TorrentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentListViewModel.swift; sourceTree = "<group>"; };
-		64870F6A2546B54700F0D381 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		648E016B256C3A7B00BB85B4 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
-		64B3796F2547FCAE007241C4 /* TorrentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentViewCell.swift; sourceTree = "<group>"; };
 		64B69661256916AD0001159E /* FilterStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStateView.swift; sourceTree = "<group>"; };
 		64B69663256917240001159E /* TorrentsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentsList.swift; sourceTree = "<group>"; };
 		64B6966525691A3A0001159E /* TorrentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentRow.swift; sourceTree = "<group>"; };
 		64B69667256920760001159E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		64B8BE1425488D8200B3F134 /* TorrentDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TorrentDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		64DB31B32546B6C8005F32B6 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
 		64DB31B72546B7BF005F32B6 /* TorrentSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TorrentSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		64DF3AE42567A369007B05E0 /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
 		7236D7A6578885841310A3E0 /* Pods-PIPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PIPlus.debug.xcconfig"; path = "Target Support Files/Pods-PIPlus/Pods-PIPlus.debug.xcconfig"; sourceTree = "<group>"; };
 		7BA6722CD3E6927715763EF2 /* libPods-PIPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PIPlus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A778681EB5F673FF02C1CC /* Pods-PIPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PIPlus.release.xcconfig"; path = "Target Support Files/Pods-PIPlus/Pods-PIPlus.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,15 +109,6 @@
 			path = FilterManager;
 			sourceTree = "<group>";
 		};
-		644269252563A7CB008B905E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				644269232563A6A6008B905E /* FilterStateVIew.swift */,
-				642528282562F2DD00BA0926 /* OFilterCategoryView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		644CEF2F2545F89400CFE9ED = {
 			isa = PBXGroup;
 			children = (
@@ -161,9 +132,7 @@
 			children = (
 				64B69660256916900001159E /* TorrentsList */,
 				6423AC84255284F100FE0365 /* MainModule */,
-				64870F6E2546B61A00F0D381 /* Main */,
 				6423AC8D2552870F00FE0365 /* FilterManager */,
-				64870F692546B53200F0D381 /* Filter */,
 				644CEF3B2545F89400CFE9ED /* AppDelegate.swift */,
 				644CEF3D2545F89400CFE9ED /* SceneDelegate.swift */,
 				644CEF442545F89500CFE9ED /* Assets.xcassets */,
@@ -171,29 +140,6 @@
 				644CEF492545F89500CFE9ED /* Info.plist */,
 			);
 			path = PIPlus;
-			sourceTree = "<group>";
-		};
-		64870F692546B53200F0D381 /* Filter */ = {
-			isa = PBXGroup;
-			children = (
-				644269252563A7CB008B905E /* Views */,
-				64870F6A2546B54700F0D381 /* FilterViewController.swift */,
-				642F63B025487A4C00D6F6CC /* FilterViewPresenter.swift */,
-				6423AC8B255286E800FE0365 /* FilterViewState.swift */,
-			);
-			path = Filter;
-			sourceTree = "<group>";
-		};
-		64870F6E2546B61A00F0D381 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				644CEF3F2545F89400CFE9ED /* MainViewController.swift */,
-				64DB31B32546B6C8005F32B6 /* MainViewPresenter.swift */,
-				64B3796F2547FCAE007241C4 /* TorrentViewCell.swift */,
-				6423AC92255289FB00FE0365 /* MainViewState.swift */,
-				64DF3AE42567A369007B05E0 /* ColumnFlowLayout.swift */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		64B69660256916900001159E /* TorrentsList */ = {
@@ -316,18 +262,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				648E016C256C3A7B00BB85B4 /* FilterView.swift in Sources */,
-				644CEF402545F89400CFE9ED /* MainViewController.swift in Sources */,
 				644CEF3C2545F89400CFE9ED /* AppDelegate.swift in Sources */,
-				644269242563A6A6008B905E /* FilterStateVIew.swift in Sources */,
-				642F63B125487A4C00D6F6CC /* FilterViewPresenter.swift in Sources */,
-				642528292562F2DD00BA0926 /* OFilterCategoryView.swift in Sources */,
-				64DF3AE52567A369007B05E0 /* ColumnFlowLayout.swift in Sources */,
-				64DB31B42546B6C8005F32B6 /* MainViewPresenter.swift in Sources */,
 				6423AC882552857700FE0365 /* MainModuleResolver.swift in Sources */,
-				6423AC8C255286E800FE0365 /* FilterViewState.swift in Sources */,
-				64B379702547FCAE007241C4 /* TorrentViewCell.swift in Sources */,
-				6423AC93255289FB00FE0365 /* MainViewState.swift in Sources */,
-				64870F6B2546B54700F0D381 /* FilterViewController.swift in Sources */,
 				644CEF3E2545F89400CFE9ED /* SceneDelegate.swift in Sources */,
 				6423AC862552851700FE0365 /* MainModule.swift in Sources */,
 				64573972256B99A500C6CDAD /* TorrentListViewModel.swift in Sources */,
