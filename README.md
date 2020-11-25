@@ -5,13 +5,9 @@ Part of [plexpi](https://github.com/plexpi/plexpi).
 ## Used technologies
 
 - Swift
-- CocoaPods
-
-## Requirements
-
-- [Install](https://cocoapods.org) CocoapPods
+- SwiftUI
+- SwiftPackageManager
   
 ## Start
 
-1. `pod install`
 1. Open `piplus.xcworkspace`
