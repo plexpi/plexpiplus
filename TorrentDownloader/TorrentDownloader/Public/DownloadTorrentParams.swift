@@ -8,10 +8,16 @@
 import Foundation
 
 public struct DownloadTorrentParams: Encodable {
-    public let category: String
+        
+    public enum Category: String, Encodable {
+        case movies = "movies"
+        case series = "series"
+    }
+    
+    public let category: Category
     public let url: String
     
-    public init(category: String, url: String) {
+    public init(category: Category, url: String) {
         self.category = category
         self.url = url
     }
