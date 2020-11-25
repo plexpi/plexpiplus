@@ -13,11 +13,14 @@ struct TorrentsList: View {
     @State private var isEditingFilters = false
     @State private var selectedTorrentDetail: TorrentDetail?
     @State private var isActionSheetShowing = false
-    @ObservedObject private var model = TorrentListViewModel(
-        torrentSearcher: PITorrentSearcher(baseURL: URL(string: "http://raspberrypi.local:5000")!),
-        torrentDownloader: PITorrentDownloader(baseURL: URL(string: "http://raspberrypi.local:45780")!),
-        filterManager: UserDefaultsFilterManager()
-    )
+    
+    @ObservedObject private var model: TorrentListViewModel
+    @ObservedObject private var presenter: TorrentsListPresenter
+    
+    init(presenter: TorrentsListPresenter) {
+        self.model = presenter.viewModel
+        self.presenter = presenter
+    }
     
     var body: some View {
         NavigationView {
@@ -30,7 +33,7 @@ struct TorrentsList: View {
                         TextField("search", text: $model.searchQuery, onEditingChanged: { isEditing in
                             self.isEditingFilters = true
                         }, onCommit: {
-                            model.loadTorrents()
+                            presenter.loadTorrents()
                         }).foregroundColor(.primary)
                         
                         Button(action: {
@@ -49,7 +52,7 @@ struct TorrentsList: View {
                         Button("Done") {
                             UIApplication.shared.endEditing(true)
                             self.isEditingFilters = false
-                            model.loadTorrents()
+                            presenter.loadTorrents()
                         }
                         .foregroundColor(Color(.systemBlue))
                         .opacity(isEditingFilters ? 1 : 0)
@@ -93,14 +96,15 @@ struct TorrentsList: View {
                 .navigationBarTitleDisplayMode(.large)
             }
             .onAppear {
-                model.loadTorrents()
+                presenter.loadFilterState()
+                presenter.loadTorrents()
             }
             .actionSheet(isPresented: $isActionSheetShowing){
                 ActionSheet(title: Text("\(selectedTorrentDetail!.name)"),
                             message: nil,
                             buttons: [
                                 .default(Text("Download"), action: {
-                                    self.model.download(selectedTorrentDetail!)
+                                    self.presenter.download(selectedTorrentDetail!)
                                 }),
                                 .cancel()
                             ])
@@ -115,7 +119,7 @@ struct TorrentsList: View {
 struct TorrentsList_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TorrentsList()
+            TorrentsList(presenter: MainModuleResolver.shared.resolveTorrentsListPresenter())
         }
     }
 }

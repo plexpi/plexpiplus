@@ -12,6 +12,12 @@ import TorrentDownloader
 class MainModuleResolver: MainModule {
     static let shared = MainModuleResolver()
     
+    func resolveTorrentsListPresenter() -> TorrentsListPresenter {
+        return TorrentsListPresenter(torrentSearcher: resolveTorrentSearcher(),
+                                     torrentDownloader: resolveTorrentDownloader(),
+                                     filterManager: resolveFilterManager())
+    }
+    
     private func resolveTorrentSearcher() -> TorrentSearcher {
         return PITorrentSearcher(baseURL: URL(string: "http://raspberrypi.local:5000")!)
     }
