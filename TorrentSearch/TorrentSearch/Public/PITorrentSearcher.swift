@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import Combine
 
 public class PITorrentSearcher: TorrentSearcher {
     private let baseURL: URL
@@ -15,34 +16,34 @@ public class PITorrentSearcher: TorrentSearcher {
         self.baseURL = baseURL
     }
     
-    public func series(_ params: TorrentSearchParams, _ completionHandler: @escaping (Result<[Torrent], Error>) -> ()) {
-        let request = AF.request(baseURL.appendingPathComponent("torrents/series/search"),
-                   parameters: params.urlParameters(),
-                   encoder: URLEncodedFormParameterEncoder.default)
-        request.validate()
-            .responseDecodable(of: [Torrent].self) { response in
+    public func series(_ params: TorrentSearchParams) -> AnyPublisher<[Torrent], Error> {
+        return AF.request(baseURL.appendingPathComponent("torrents/series/search"),
+                       parameters: params.urlParameters(),
+                       encoder: URLEncodedFormParameterEncoder.default)
+            .publishDecodable(type: [Torrent].self)
+            .tryMap { response in
                 guard let torrents = response.value else {
-                    completionHandler(.failure(response.error!))
-                    return
+                    throw response.error!
                 }
-                
-                completionHandler(.success(torrents))
+
+                return torrents
             }
+            .eraseToAnyPublisher()
     }
     
-    public func movies(_ params: TorrentSearchParams, _ completionHandler: @escaping (Result<[Torrent], Error>) -> ()) {
-        AF.request(baseURL.appendingPathComponent("torrents/movies/search"),
-                   parameters: params.urlParameters(),
-                   encoder: URLEncodedFormParameterEncoder.default)
-            .validate()
-            .responseDecodable(of: [Torrent].self) { response in
+    public func movies(_ params: TorrentSearchParams) -> AnyPublisher<[Torrent], Error> {
+        return AF.request(baseURL.appendingPathComponent("torrents/movies/search"),
+                          parameters: params.urlParameters(),
+                          encoder: URLEncodedFormParameterEncoder.default)
+            .publishDecodable(type: [Torrent].self)
+            .tryMap { response in
                 guard let torrents = response.value else {
-                    completionHandler(.failure(response.error!))
-                    return
+                    throw response.error!
                 }
                 
-                completionHandler(.success(torrents))
+                return torrents
             }
+            .eraseToAnyPublisher()
     }
     
     
