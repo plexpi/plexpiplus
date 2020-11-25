@@ -11,19 +11,15 @@
 		6451232E2545EB96006516C0 /* TorrentSearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6451232D2545EB96006516C0 /* TorrentSearchParams.swift */; };
 		645123322545EC12006516C0 /* Torrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645123312545EC12006516C0 /* Torrent.swift */; };
 		645123362545ED87006516C0 /* PITorrentSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645123352545ED87006516C0 /* PITorrentSearcher.swift */; };
-		DE91415B0FEA5D5852C7636C /* libPods-TorrentSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C64AB63418424AD3B4D1F1A3 /* libPods-TorrentSearch.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		37CAD753CFE6F44AC66307C7 /* Pods-TorrentSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorrentSearch.debug.xcconfig"; path = "Target Support Files/Pods-TorrentSearch/Pods-TorrentSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		6451231D2545EB43006516C0 /* TorrentSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TorrentSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		645123212545EB43006516C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6451232A2545EB61006516C0 /* TorrentSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentSearch.swift; sourceTree = "<group>"; };
 		6451232D2545EB96006516C0 /* TorrentSearchParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentSearchParams.swift; sourceTree = "<group>"; };
 		645123312545EC12006516C0 /* Torrent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Torrent.swift; sourceTree = "<group>"; };
 		645123352545ED87006516C0 /* PITorrentSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PITorrentSearcher.swift; sourceTree = "<group>"; };
-		C64AB63418424AD3B4D1F1A3 /* libPods-TorrentSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TorrentSearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7D5AFC7C0A60D69C4ED52F3 /* Pods-TorrentSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorrentSearch.release.xcconfig"; path = "Target Support Files/Pods-TorrentSearch/Pods-TorrentSearch.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +27,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE91415B0FEA5D5852C7636C /* libPods-TorrentSearch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,8 +38,6 @@
 			children = (
 				6451231F2545EB43006516C0 /* TorrentSearch */,
 				6451231E2545EB43006516C0 /* Products */,
-				BBB58179B8CC361E2C3A8F38 /* Pods */,
-				7D82089C8DFC2470FA192EE3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,24 +69,6 @@
 			path = Public;
 			sourceTree = "<group>";
 		};
-		7D82089C8DFC2470FA192EE3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C64AB63418424AD3B4D1F1A3 /* libPods-TorrentSearch.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BBB58179B8CC361E2C3A8F38 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				37CAD753CFE6F44AC66307C7 /* Pods-TorrentSearch.debug.xcconfig */,
-				E7D5AFC7C0A60D69C4ED52F3 /* Pods-TorrentSearch.release.xcconfig */,
-			);
-			name = Pods;
-			path = ../Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -111,7 +86,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 645123252545EB43006516C0 /* Build configuration list for PBXNativeTarget "TorrentSearch" */;
 			buildPhases = (
-				DEADC026F54B122C3AB579FD /* [CP] Check Pods Manifest.lock */,
 				645123182545EB43006516C0 /* Headers */,
 				645123192545EB43006516C0 /* Sources */,
 				6451231A2545EB43006516C0 /* Frameworks */,
@@ -167,31 +141,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		DEADC026F54B122C3AB579FD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TorrentSearch-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		645123192545EB43006516C0 /* Sources */ = {
@@ -332,7 +281,6 @@
 		};
 		645123262545EB43006516C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37CAD753CFE6F44AC66307C7 /* Pods-TorrentSearch.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -360,7 +308,6 @@
 		};
 		645123272545EB43006516C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7D5AFC7C0A60D69C4ED52F3 /* Pods-TorrentSearch.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;

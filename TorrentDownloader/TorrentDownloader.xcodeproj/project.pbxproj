@@ -8,16 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		64B8BE1225488AEF00B3F134 /* TorrentDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B8BE1125488AEF00B3F134 /* TorrentDownloader.swift */; };
-		9CA8091263E324A3C28A9066 /* libPods-TorrentDownloader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9336A10DC2509FB37C843D7 /* libPods-TorrentDownloader.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		642F63BE25488A7B00D6F6CC /* TorrentDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TorrentDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		642F63C225488A7B00D6F6CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64B8BE1125488AEF00B3F134 /* TorrentDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentDownloader.swift; sourceTree = "<group>"; };
-		67ADFAB5B74083DF56E74DC9 /* Pods-TorrentDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorrentDownloader.debug.xcconfig"; path = "Target Support Files/Pods-TorrentDownloader/Pods-TorrentDownloader.debug.xcconfig"; sourceTree = "<group>"; };
-		EA57423000930A9104007D2D /* Pods-TorrentDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TorrentDownloader.release.xcconfig"; path = "Target Support Files/Pods-TorrentDownloader/Pods-TorrentDownloader.release.xcconfig"; sourceTree = "<group>"; };
-		F9336A10DC2509FB37C843D7 /* libPods-TorrentDownloader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TorrentDownloader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -25,30 +21,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CA8091263E324A3C28A9066 /* libPods-TorrentDownloader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E26E5DA7F296CC5A860A351 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				67ADFAB5B74083DF56E74DC9 /* Pods-TorrentDownloader.debug.xcconfig */,
-				EA57423000930A9104007D2D /* Pods-TorrentDownloader.release.xcconfig */,
-			);
-			name = Pods;
-			path = ../Pods;
-			sourceTree = "<group>";
-		};
 		642F63B425488A7B00D6F6CC = {
 			isa = PBXGroup;
 			children = (
 				642F63C025488A7B00D6F6CC /* TorrentDownloader */,
 				642F63BF25488A7B00D6F6CC /* Products */,
-				2E26E5DA7F296CC5A860A351 /* Pods */,
-				EE35712112170F73CCC5782A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,14 +52,6 @@
 			path = TorrentDownloader;
 			sourceTree = "<group>";
 		};
-		EE35712112170F73CCC5782A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F9336A10DC2509FB37C843D7 /* libPods-TorrentDownloader.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -94,7 +69,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 642F63C625488A7B00D6F6CC /* Build configuration list for PBXNativeTarget "TorrentDownloader" */;
 			buildPhases = (
-				CA015AD760BFFAAB096BC691 /* [CP] Check Pods Manifest.lock */,
 				642F63B925488A7B00D6F6CC /* Headers */,
 				642F63BA25488A7B00D6F6CC /* Sources */,
 				642F63BB25488A7B00D6F6CC /* Frameworks */,
@@ -150,31 +124,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		CA015AD760BFFAAB096BC691 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TorrentDownloader-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		642F63BA25488A7B00D6F6CC /* Sources */ = {
@@ -312,7 +261,6 @@
 		};
 		642F63C725488A7B00D6F6CC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67ADFAB5B74083DF56E74DC9 /* Pods-TorrentDownloader.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -340,7 +288,6 @@
 		};
 		642F63C825488A7B00D6F6CC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA57423000930A9104007D2D /* Pods-TorrentDownloader.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
