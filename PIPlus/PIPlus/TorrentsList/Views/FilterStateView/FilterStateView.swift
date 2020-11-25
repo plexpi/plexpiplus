@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-class FilterStateViewState: ObservableObject {
-    static let `default` = FilterStateViewState(type: .tv, language: .en)
-    
-    @Published var type: TorrentType
-    @Published var language: TorrentLanguage
-    
-    init(type: TorrentType, language: TorrentLanguage) {
-        self.type = type
-        self.language = language
-    }
-}
-
 struct FilterStateView: View {
     @Binding var state: FilterStateViewState
     
@@ -33,6 +21,6 @@ struct FilterStateView: View {
 struct FilterStateView_Previews: PreviewProvider {
     static var previews: some View {
         FilterStateView(state: Binding<FilterStateViewState>.constant(
-                            FilterStateViewState.default))
+                            FilterStateViewState(filter: TorrentFilter.default)))
     }
 }

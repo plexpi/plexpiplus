@@ -14,5 +14,5 @@ class TorrentListViewModel: ObservableObject {
     @Published var searchQuery = ""
     @Published var isLoading = false
     @Published var isAlertShowing = false
-    @Published var filterState: FilterStateViewState = FilterStateViewState.default
+    @Published var filterState: FilterStateViewState = FilterStateViewState(filter: TorrentFilter.default)
 }

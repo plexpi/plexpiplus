@@ -7,28 +7,6 @@
 
 import SwiftUI
 
-enum TorrentType: String, Identifiable {
-    case film = "film"
-    case tv = "tv"
-    
-    var image: Image {
-        return Image(systemName: rawValue)
-    }
-    
-    var id: String { rawValue }
-}
-
-enum TorrentLanguage: String, Identifiable {
-    case en = "en"
-    case hu = "hu"
-    
-    var text: Text {
-        return Text(rawValue)
-    }
-    
-    var id: String { rawValue }
-}
-
 struct FilterView: View {
     private let types: [TorrentType] = [.tv, .film]
     private let languages: [TorrentLanguage] = [.en, .hu]
@@ -58,9 +36,24 @@ struct FilterView: View {
     }
 }
 
+extension TorrentType: Identifiable {
+    var id: String { rawValue }
+    
+    var image: Image {
+        return Image(systemName: rawValue)
+    }
+}
+
+extension TorrentLanguage: Identifiable {
+    var id: String { rawValue }
+    
+    var text: Text {
+        return Text(rawValue)
+    }
+}
 
 struct FilterView_Previews: PreviewProvider {
     static var previews: some View {
-        FilterView(state: Binding<FilterStateViewState>.constant(FilterStateViewState.default))
+        FilterView(state: Binding.constant(FilterStateViewState(filter: TorrentFilter.default)))
     }
 }

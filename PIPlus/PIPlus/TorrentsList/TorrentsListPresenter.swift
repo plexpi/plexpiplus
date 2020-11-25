@@ -9,10 +9,6 @@ import Foundation
 import TorrentSearch
 import TorrentDownloader
 
-protocol TorrentsListPresenting {
-    func loadTorrents()
-}
-
 class TorrentsListPresenter: ObservableObject {
     private let torrentSearcher: TorrentSearcher
     private let torrentDownloader: TorrentDownloader
@@ -28,13 +24,13 @@ class TorrentsListPresenter: ObservableObject {
     }
     
     func loadFilterState() {
-        viewModel.filterState = filterManager.loadLastFilter()
+        viewModel.filterState = FilterStateViewState(filter: filterManager.loadLastFilter())
     }
     
     func loadTorrents() {
         viewModel.isLoading = true
         viewModel.torrents = [TorrentDetail]()
-        filterManager.saveFilter(viewModel.filterState)
+        filterManager.saveFilter(viewModel.filterState.torrentFilter)
         switch viewModel.filterState.type {
         case .tv:
             torrentSearcher.series(self.torrentSearchParams(), torrentSearchResultHandler)
@@ -89,5 +85,11 @@ class TorrentsListPresenter: ObservableObject {
         
         return TorrentSearchParams(category: category,
                                    query: viewModel.searchQuery)
+    }
+}
+
+private extension FilterStateViewState {
+    var torrentFilter: TorrentFilter {
+        return TorrentFilter(type: self.type, language: self.language)
     }
 }

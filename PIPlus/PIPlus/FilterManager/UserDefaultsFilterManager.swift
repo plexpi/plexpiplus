@@ -21,23 +21,23 @@ class UserDefaultsFilterManager: FilterManager {
         self.userDefaults = userDefaults
     }
     
-    func saveFilter(_ filter: FilterStateViewState) {
+    func saveFilter(_ filter: TorrentFilter) {
         queue.sync(flags: .barrier) {
             userDefaults.setValue(filter.type.rawValue, forKey: Keys.category)
             userDefaults.setValue(filter.language.rawValue, forKey: Keys.language)
         }
     }
     
-    func loadLastFilter() -> FilterStateViewState {
+    func loadLastFilter() -> TorrentFilter {
         queue.sync {
             guard let rawType = userDefaults.value(forKey: Keys.category) as? String,
                   let type = TorrentType(rawValue: rawType),
                   let rawLanguage = userDefaults.value(forKey: Keys.language) as? String,
                   let language = TorrentLanguage(rawValue: rawLanguage) else {
-                return FilterStateViewState.default
+                return TorrentFilter.default
             }
             
-            return FilterStateViewState(type: type, language: language)
+            return TorrentFilter(type: type, language: language)
         }
     }
 }
