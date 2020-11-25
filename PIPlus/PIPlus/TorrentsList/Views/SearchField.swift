@@ -29,6 +29,8 @@ struct SearchField: View {
                       },
                       onCommit: self.onCommit
             )
+            .autocapitalization(.none)
+            .disableAutocorrection(true)
             .foregroundColor(.primary)
             
             Button(action: {

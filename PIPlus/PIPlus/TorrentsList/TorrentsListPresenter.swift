@@ -8,12 +8,15 @@
 import Foundation
 import TorrentSearch
 import TorrentDownloader
+import Combine
 
 class TorrentsListPresenter: ObservableObject {
     private let torrentSearcher: TorrentSearcher
     private let torrentDownloader: TorrentDownloader
     private let filterManager: FilterManager
     @Published private(set) var viewModel = TorrentListViewModel()
+    
+    private var subscriptions: Set<AnyCancellable> = []
     
     init(torrentSearcher: TorrentSearcher,
          torrentDownloader: TorrentDownloader,
@@ -31,47 +34,42 @@ class TorrentsListPresenter: ObservableObject {
         viewModel.isLoading = true
         viewModel.torrents = [TorrentDetail]()
         filterManager.saveFilter(viewModel.filterState.torrentFilter)
+        
+        subscriptions.forEach { $0.cancel() }
+        subscriptions = []
+        
         switch viewModel.filterState.type {
         case .tv:
-            torrentSearcher.series(self.torrentSearchParams(), torrentSearchResultHandler)
+            handleTorrentsResult(torrentSearcher.series(self.torrentSearchParams()))
         case .film:
-            torrentSearcher.movies(self.torrentSearchParams(), torrentSearchResultHandler)
+            handleTorrentsResult(torrentSearcher.movies(self.torrentSearchParams()))
         }
     }
     
     func download(_ torrent: TorrentDetail) {
         viewModel.isLoading = true
         let params = DownloadTorrentParams(category: viewModel.filterState.type.rawValue, url: torrent.downloadURL)
-        torrentDownloader.downloadTorrent(params: params) { (result) in
-            DispatchQueue.main.async {
-                self.viewModel.isLoading = false
-                switch result {
-                case .failure(let error):
+        _ = torrentDownloader.downloadTorrent(params: params)
+            .subscribe(on: DispatchQueue.main)
+            .sink(
+                receiveCompletion: { error in
+                    self.viewModel.isLoading = false
                     print(error)
-                case .success(_):
+                }, receiveValue: { result in
                     self.viewModel.isAlertShowing = true
-                }
-            }
-        }
+                })
     }
     
-    private func torrentSearchResultHandler(_ result: Result<[Torrent], Error>) {
-        viewModel.isLoading = false
-        switch result {
-        case .failure(let error):
-            DispatchQueue.main.async {
-                print(error)
-            }
-        case .success(let torrents):
-            DispatchQueue.main.async {
-                self.viewModel.torrents = torrents.map {
-                    TorrentDetail(name: $0.title,
-                                  date: $0.date,
-                                  size: $0.size,
-                                  downloadURL: $0.download)
-                }
-            }
-        }
+    private func handleTorrentsResult(_ publisher: AnyPublisher<[Torrent], Error>) {
+        publisher
+            .subscribe(on: DispatchQueue.main)
+            .sink(
+                receiveCompletion: { error in
+                    self.viewModel.isLoading = false
+                }, receiveValue: {
+                    self.viewModel.torrents = $0.map { self.mapToTorrentDetail($0) }
+                })
+            .store(in: &subscriptions)
     }
     
     private func torrentSearchParams() -> TorrentSearchParams {
@@ -85,6 +83,13 @@ class TorrentsListPresenter: ObservableObject {
         
         return TorrentSearchParams(category: category,
                                    query: viewModel.searchQuery)
+    }
+    
+    private func mapToTorrentDetail(_ torrent: Torrent) -> TorrentDetail {
+        return TorrentDetail(name: torrent.title,
+                             date: torrent.date,
+                             size: torrent.size,
+                             downloadURL: torrent.download)
     }
 }
 

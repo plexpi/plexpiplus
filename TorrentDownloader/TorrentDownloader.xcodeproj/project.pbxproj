@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64B88074256EE01F000F3FCE /* PITorrentDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B88073256EE01F000F3FCE /* PITorrentDownloader.swift */; };
+		64B88078256EE058000F3FCE /* DownloadTorrentParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B88077256EE058000F3FCE /* DownloadTorrentParams.swift */; };
 		64B8BE1225488AEF00B3F134 /* TorrentDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B8BE1125488AEF00B3F134 /* TorrentDownloader.swift */; };
 		64DFB33D256E7B6500CF861E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 64DFB33C256E7B6500CF861E /* Alamofire */; };
 /* End PBXBuildFile section */
@@ -14,6 +16,8 @@
 /* Begin PBXFileReference section */
 		642F63BE25488A7B00D6F6CC /* TorrentDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TorrentDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		642F63C225488A7B00D6F6CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64B88073256EE01F000F3FCE /* PITorrentDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PITorrentDownloader.swift; sourceTree = "<group>"; };
+		64B88077256EE058000F3FCE /* DownloadTorrentParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTorrentParams.swift; sourceTree = "<group>"; };
 		64B8BE1125488AEF00B3F134 /* TorrentDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,10 +52,20 @@
 		642F63C025488A7B00D6F6CC /* TorrentDownloader */ = {
 			isa = PBXGroup;
 			children = (
+				64B88076256EE043000F3FCE /* Public */,
 				642F63C225488A7B00D6F6CC /* Info.plist */,
-				64B8BE1125488AEF00B3F134 /* TorrentDownloader.swift */,
 			);
 			path = TorrentDownloader;
+			sourceTree = "<group>";
+		};
+		64B88076256EE043000F3FCE /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				64B8BE1125488AEF00B3F134 /* TorrentDownloader.swift */,
+				64B88077256EE058000F3FCE /* DownloadTorrentParams.swift */,
+				64B88073256EE01F000F3FCE /* PITorrentDownloader.swift */,
+			);
+			path = Public;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64B88074256EE01F000F3FCE /* PITorrentDownloader.swift in Sources */,
 				64B8BE1225488AEF00B3F134 /* TorrentDownloader.swift in Sources */,
+				64B88078256EE058000F3FCE /* DownloadTorrentParams.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +295,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TorrentDownloader/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,7 +322,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TorrentDownloader/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
