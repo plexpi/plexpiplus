@@ -110,7 +110,7 @@ struct TorrentsList: View {
                     .opacity(isEditingFilters ? 0 : 1)
             }
         }
-        .padding(.horizontal)
+        .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
         .navigationBarHidden(isEditingFilters)
         .onTapGesture {
             self.isEditingFilters = true

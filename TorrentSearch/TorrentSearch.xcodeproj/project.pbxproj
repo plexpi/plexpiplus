@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		6451232E2545EB96006516C0 /* TorrentSearchParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6451232D2545EB96006516C0 /* TorrentSearchParams.swift */; };
 		645123322545EC12006516C0 /* Torrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645123312545EC12006516C0 /* Torrent.swift */; };
 		645123362545ED87006516C0 /* PITorrentSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645123352545ED87006516C0 /* PITorrentSearcher.swift */; };
+		64DFB342256E8FF500CF861E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 64DFB341256E8FF500CF861E /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64DFB342256E8FF500CF861E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +98,9 @@
 			dependencies = (
 			);
 			name = TorrentSearch;
+			packageProductDependencies = (
+				64DFB341256E8FF500CF861E /* Alamofire */,
+			);
 			productName = TorrentSearch;
 			productReference = 6451231D2545EB43006516C0 /* TorrentSearch.framework */;
 			productType = "com.apple.product-type.framework";
@@ -123,6 +128,9 @@
 				Base,
 			);
 			mainGroup = 645123132545EB43006516C0;
+			packageReferences = (
+				64DFB340256E8FF500CF861E /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 6451231E2545EB43006516C0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -291,7 +299,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TorrentSearch/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,7 +326,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = TorrentSearch/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,6 +362,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		64DFB340256E8FF500CF861E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		64DFB341256E8FF500CF861E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 64DFB340256E8FF500CF861E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 645123142545EB43006516C0 /* Project object */;
 }
