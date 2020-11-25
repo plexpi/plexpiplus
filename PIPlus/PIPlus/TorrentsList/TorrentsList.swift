@@ -26,21 +26,7 @@ struct TorrentsList: View {
         NavigationView {
             VStack {
                 searchBar
-                
-                ZStack {
-                    ProgressView()
-                        .opacity(model.isLoading ? 1 : 0)
-                    
-                    torrentsList
-                        .opacity(!(model.isLoading || isEditingFilters) ? 1 : 0)
-                        
-                    
-                    filterView
-                        .opacity(isEditingFilters ? 1 : 0)
-                        .padding()
-                }
-                .navigationBarTitle(Text("Torrents"))
-                .navigationBarTitleDisplayMode(.large)
+                list
             }
             .onAppear {
                 presenter.loadFilterState()
@@ -115,6 +101,22 @@ struct TorrentsList: View {
         .onTapGesture {
             self.isEditingFilters = true
         }
+    }
+    
+    private var list: some View {
+        ZStack {
+            ProgressView()
+                .opacity(model.isLoading ? 1 : 0)
+            
+            torrentsList
+                .opacity(!(model.isLoading || isEditingFilters) ? 1 : 0)
+            
+            filterView
+                .opacity(isEditingFilters ? 1 : 0)
+                .padding()
+        }
+        .navigationBarTitle(Text("Torrents"))
+        .navigationBarTitleDisplayMode(.automatic)
     }
 }
 
