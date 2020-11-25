@@ -25,7 +25,7 @@ struct TorrentsList: View {
     var body: some View {
         NavigationView {
             VStack {
-                searchView
+                searchBar
                 
                 ZStack {
                     ProgressView()
@@ -82,7 +82,6 @@ struct TorrentsList: View {
             }
         }
         .listStyle(PlainListStyle())
-        .resignKeyboardOnDragGesture()
     }
     
     private var filterView: some View {
@@ -92,28 +91,11 @@ struct TorrentsList: View {
         }
     }
     
-    private var searchView: some View {
+    private var searchBar: some View {
         HStack {
-            HStack {
-                Image(systemName: "magnifyingglass")
-                
-                TextField("search", text: $model.searchQuery, onEditingChanged: { isEditing in
-                    self.isEditingFilters = true
-                }, onCommit: {
-                    presenter.loadTorrents()
-                }).foregroundColor(.primary)
-                
-                Button(action: {
-                    model.searchQuery = ""
-                }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .opacity(!model.searchQuery.isEmpty && isEditingFilters ? 1 : 0)
-                }
+            SearchField(text: $model.searchQuery, isEditing: $isEditingFilters) {
+                presenter.loadTorrents()
             }
-            .padding(EdgeInsets(top: 9, leading: 6, bottom: 9, trailing: 6))
-            .foregroundColor(.secondary)
-            .background(Color(.secondarySystemBackground))
-            .cornerRadius(10.0)
             
             ZStack {
                 Button("Done") {
@@ -146,24 +128,6 @@ struct TorrentsList_Previews: PreviewProvider {
 
 extension UIApplication {
     func endEditing(_ force: Bool) {
-        self.windows
-            .filter{$0.isKeyWindow}
-            .first?
-            .endEditing(force)
-    }
-}
-
-struct ResignKeyboardOnDragGesture: ViewModifier {
-    var gesture = DragGesture().onChanged{_ in
-        UIApplication.shared.endEditing(true)
-    }
-    func body(content: Content) -> some View {
-        content.gesture(gesture)
-    }
-}
-
-extension View {
-    func resignKeyboardOnDragGesture() -> some View {
-        return modifier(ResignKeyboardOnDragGesture())
+        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

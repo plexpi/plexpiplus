@@ -8,6 +8,6 @@
 import Foundation
 
 protocol FilterManager {
-    func saveFilter(_ filter: FilterStateViewState)
-    func loadLastFilter() -> FilterStateViewState
+    func saveFilter(_ filter: TorrentFilter)
+    func loadLastFilter() -> TorrentFilter
 }
