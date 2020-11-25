@@ -10,17 +10,12 @@ import TorrentSearch
 import TorrentDownloader
 
 class MainModuleResolver: MainModule {
-    func resolveFilterViewPresenter(view: FilterView) -> FilterViewPresenter {
-        return FilterViewPresenter(view: view, filterManager: resolveFilterManager())
-    }
-    
     static let shared = MainModuleResolver()
     
-    func resolveMainViewPresenter(view: MainView) -> MainViewPresenter {
-        return MainViewPresenter(view: view,
-                                 torrentSearcher: resolveTorrentSearcher(),
-                                 torrentDownloader: resolveTorrentDownloader(),
-                                 filterManager: resolveFilterManager())
+    func resolveTorrentsListPresenter() -> TorrentsListPresenter {
+        return TorrentsListPresenter(torrentSearcher: resolveTorrentSearcher(),
+                                     torrentDownloader: resolveTorrentDownloader(),
+                                     filterManager: resolveFilterManager())
     }
     
     private func resolveTorrentSearcher() -> TorrentSearcher {
