@@ -29,7 +29,6 @@
 		64D2D698256E48350075867F /* TorrentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D2D697256E48350075867F /* TorrentFilter.swift */; };
 		64DB31B82546B7BF005F32B6 /* TorrentSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DB31B72546B7BF005F32B6 /* TorrentSearch.framework */; };
 		64DB31B92546B7BF005F32B6 /* TorrentSearch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64DB31B72546B7BF005F32B6 /* TorrentSearch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E6E6DE3A23B36BEBE06E8408 /* libPods-PIPlus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA6722CD3E6927715763EF2 /* libPods-PIPlus.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,9 +69,6 @@
 		64D2D695256E47780075867F /* TorrentLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentLanguage.swift; sourceTree = "<group>"; };
 		64D2D697256E48350075867F /* TorrentFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentFilter.swift; sourceTree = "<group>"; };
 		64DB31B72546B7BF005F32B6 /* TorrentSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TorrentSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7236D7A6578885841310A3E0 /* Pods-PIPlus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PIPlus.debug.xcconfig"; path = "Target Support Files/Pods-PIPlus/Pods-PIPlus.debug.xcconfig"; sourceTree = "<group>"; };
-		7BA6722CD3E6927715763EF2 /* libPods-PIPlus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PIPlus.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9A778681EB5F673FF02C1CC /* Pods-PIPlus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PIPlus.release.xcconfig"; path = "Target Support Files/Pods-PIPlus/Pods-PIPlus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +77,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				64DB31B82546B7BF005F32B6 /* TorrentSearch.framework in Frameworks */,
-				E6E6DE3A23B36BEBE06E8408 /* libPods-PIPlus.a in Frameworks */,
 				64B8BE1525488D8200B3F134 /* TorrentDownloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,16 +84,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15CEA8C65695501251428AD1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7236D7A6578885841310A3E0 /* Pods-PIPlus.debug.xcconfig */,
-				E9A778681EB5F673FF02C1CC /* Pods-PIPlus.release.xcconfig */,
-			);
-			name = Pods;
-			path = ../Pods;
-			sourceTree = "<group>";
-		};
 		6423AC84255284F100FE0365 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +110,6 @@
 				644CEF3A2545F89400CFE9ED /* PIPlus */,
 				644CEF392545F89400CFE9ED /* Products */,
 				64DB31B62546B7BF005F32B6 /* Frameworks */,
-				15CEA8C65695501251428AD1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,7 +172,6 @@
 			children = (
 				64B8BE1425488D8200B3F134 /* TorrentDownloader.framework */,
 				64DB31B72546B7BF005F32B6 /* TorrentSearch.framework */,
-				7BA6722CD3E6927715763EF2 /* libPods-PIPlus.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -200,7 +183,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 644CEF4C2545F89500CFE9ED /* Build configuration list for PBXNativeTarget "PIPlus" */;
 			buildPhases = (
-				442D3AD4D89F788A3C96CC1C /* [CP] Check Pods Manifest.lock */,
 				644CEF342545F89400CFE9ED /* Sources */,
 				644CEF352545F89400CFE9ED /* Frameworks */,
 				644CEF362545F89400CFE9ED /* Resources */,
@@ -258,31 +240,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		442D3AD4D89F788A3C96CC1C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PIPlus-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		644CEF342545F89400CFE9ED /* Sources */ = {
@@ -357,6 +314,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DISABLE_DIAMOND_PROBLEM_DIAGNOSTIC = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -418,6 +376,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DISABLE_DIAMOND_PROBLEM_DIAGNOSTIC = 1;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -440,7 +399,6 @@
 		};
 		644CEF4D2545F89500CFE9ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7236D7A6578885841310A3E0 /* Pods-PIPlus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +410,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adborbas.PIPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -461,7 +420,6 @@
 		};
 		644CEF4E2545F89500CFE9ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9A778681EB5F673FF02C1CC /* Pods-PIPlus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -473,6 +431,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adborbas.PIPlus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

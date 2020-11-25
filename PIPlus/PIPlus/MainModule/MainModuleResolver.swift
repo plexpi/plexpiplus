@@ -9,7 +9,7 @@ import Foundation
 import TorrentSearch
 import TorrentDownloader
 
-class MainModuleResolver: MainModule {
+class MainModuleResolver {
     static let shared = MainModuleResolver()
     
     func resolveTorrentsListPresenter() -> TorrentsListPresenter {
