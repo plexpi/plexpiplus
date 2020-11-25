@@ -52,8 +52,8 @@ extension TorrentLanguage: Identifiable {
     }
 }
 
-//struct FilterView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FilterView(state: Binding<FilterStateViewState>.constant(TorrentFilter.default))
-//    }
-//}
+struct FilterView_Previews: PreviewProvider {
+    static var previews: some View {
+        FilterView(state: Binding.constant(FilterStateViewState(filter: TorrentFilter.default)))
+    }
+}
