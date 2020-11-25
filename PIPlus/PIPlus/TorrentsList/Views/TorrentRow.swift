@@ -21,6 +21,7 @@ struct TorrentRow: View {
     let torrent: TorrentDetail
     
     var body: some View {
+        
         VStack(alignment: .leading) {
             Text(torrent.name)
                 .truncationMode(.tail)

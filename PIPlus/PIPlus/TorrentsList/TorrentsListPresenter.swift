@@ -48,7 +48,7 @@ class TorrentsListPresenter: ObservableObject {
     
     func download(_ torrent: TorrentDetail) {
         viewModel.isLoading = true
-        let params = DownloadTorrentParams(category: viewModel.filterState.type.rawValue, url: torrent.downloadURL)
+        let params = downloadTorrentParams(type: viewModel.filterState.type, url: torrent.downloadURL)
         _ = torrentDownloader.downloadTorrent(params: params)
             .subscribe(on: DispatchQueue.main)
             .sink(
@@ -58,6 +58,17 @@ class TorrentsListPresenter: ObservableObject {
                 }, receiveValue: { result in
                     self.viewModel.isAlertShowing = true
                 })
+    }
+    
+    private func downloadTorrentParams(type: TorrentType, url: String) -> DownloadTorrentParams {
+        let category: DownloadTorrentParams.Category
+        switch type {
+        case .film:
+            category = .movies
+        case .tv:
+            category = .series
+        }
+        return DownloadTorrentParams(category: category, url: url)
     }
     
     private func handleTorrentsResult(_ publisher: AnyPublisher<[Torrent], Error>) {

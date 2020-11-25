@@ -36,7 +36,7 @@ struct TorrentsList: View {
                 downloadActionSheet
             }
             .alert(isPresented: $model.isAlertShowing, content: {
-              downloadStartedAlert
+                downloadStartedAlert
             })
         } 
     }
