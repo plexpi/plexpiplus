@@ -20,6 +20,10 @@ struct TorrentsList: View {
     init(presenter: TorrentsListPresenter) {
         self.model = presenter.viewModel
         self.presenter = presenter
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .foregroundColor: UIColor(named: "theme")!
+        ]
     }
     
     var body: some View {
@@ -28,6 +32,8 @@ struct TorrentsList: View {
                 searchBar
                 list
             }
+            .navigationBarTitle("Torrents", displayMode: .automatic)
+            .navigationBarHidden(isEditingFilters)
             .onAppear {
                 presenter.loadFilterState()
                 presenter.loadTorrents()
@@ -97,7 +103,6 @@ struct TorrentsList: View {
             }
         }
         .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
-        .navigationBarHidden(isEditingFilters)
         .onTapGesture {
             self.isEditingFilters = true
         }
@@ -115,8 +120,6 @@ struct TorrentsList: View {
                 .opacity(isEditingFilters ? 1 : 0)
                 .padding()
         }
-        .navigationBarTitle(Text("Torrents"))
-        .navigationBarTitleDisplayMode(.automatic)
     }
 }
 
@@ -124,6 +127,9 @@ struct TorrentsList_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             TorrentsList(presenter: MainModuleResolver.shared.resolveTorrentsListPresenter())
+                .preferredColorScheme(.light)
+            TorrentsList(presenter: MainModuleResolver.shared.resolveTorrentsListPresenter())
+                .preferredColorScheme(.dark)
         }
     }
 }
@@ -132,4 +138,18 @@ extension UIApplication {
     func endEditing(_ force: Bool) {
         sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
+}
+
+struct NavigationConfigurator: UIViewControllerRepresentable {
+    var configure: (UINavigationController) -> Void = { _ in }
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
+        UIViewController()
+    }
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
+        if let nc = uiViewController.navigationController {
+            self.configure(nc)
+        }
+    }
+    
 }
