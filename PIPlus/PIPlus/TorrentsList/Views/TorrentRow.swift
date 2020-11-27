@@ -24,6 +24,7 @@ struct TorrentRow: View {
         
         VStack(alignment: .leading) {
             Text(torrent.name)
+                .foregroundColor(.primary)
                 .truncationMode(.tail)
                 .lineLimit(1)
             
