@@ -28,10 +28,23 @@ struct TorrentsList: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            ScrollView {
                 searchBar
-                list
+                
+                torrentsList
+                    .opacity(!(model.isLoading || isEditingFilters) ? 1 : 0)
             }
+            .overlay(
+                ZStack {
+                    ProgressView()
+                        .opacity(model.isLoading ? 1 : 0)
+                    filterView
+                        .opacity(isEditingFilters ? 1 : 0)
+                        .padding(.top, 70)
+                        .padding(.horizontal, 16)
+                }
+                
+            )
             .navigationBarTitle("Torrents", displayMode: .automatic)
             .navigationBarHidden(isEditingFilters)
             .onAppear {
@@ -63,17 +76,16 @@ struct TorrentsList: View {
     }
     
     private var torrentsList: some View {
-        List {
-            ForEach(model.torrents) { torrent in
-                Button(action: {
-                    selectedTorrentDetail = torrent
-                    isActionSheetShowing = true
-                }) {
-                    TorrentRow(torrent: torrent)
-                }
+        ForEach(model.torrents) { torrent in
+            Button(action: {
+                selectedTorrentDetail = torrent
+                isActionSheetShowing = true
+            }) {
+                TorrentRow(torrent: torrent)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 2)
             }
         }
-        .listStyle(PlainListStyle())
     }
     
     private var filterView: some View {
@@ -104,6 +116,7 @@ struct TorrentsList: View {
         }
         .padding(EdgeInsets(top: 16, leading: 16, bottom: 0, trailing: 16))
         .onTapGesture {
+            self.model.torrents = []
             self.isEditingFilters = true
         }
     }
